@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+#root{
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.App{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(23, 23, 71);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#container{
+  margin: 0 auto;
+  height: 120px;
+  width: 450px;
+  border: 3px solid white;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.scores{
+  margin-right: 20px;
+  width: 50%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.scor{
+  width: 100px;
+  height: 70%;
+  background-color: rgb(217, 216, 218);
+  color: rgb(63, 63, 63);
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+}
+
+.scor h3{
+  font-weight: 400;
+  color: rgb(39, 39, 35);
+}
+
+.paper, .rock, .scissor{
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 20px solid yellow;
+  background-color: aliceblue;
+}
+
+.paper:hover, .rock:hover, .scissor:hover{
+  cursor: pointer;
+  background-color: rgb(213, 210, 216);
+}
+
+.paper:active, .rock:active, .scissor:active{
+  border: 20px solid black;
+}
+.paper{
+  border: 20px solid rgb(117, 129, 236);
+  position: relative;
+  bottom: 30px;
+  right: 10px;
+}
+.rock{
+  border: 20px solid rgb(233, 58, 87);
+  position: relative;
+  bottom: 30px;
+  left: 25px;
+}
+
+#choose-move{
+  background-image: url("./images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  
+}
+
+.rules{
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  z-index: 99;
+  transition:visibility 0.3s linear,opacity 0.3s linear;
+  opacity: 0;
+}
+.rules img{
+  height: 90vh;
+  width: 85vw;
+  border-radius: 10px;
+}
+
+.show-hide{
+  z-index: 900;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(182, 192, 183);
+  border: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.reset{
+  z-index: 900;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgb(190, 36, 16);
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.reset:hover{
+  cursor: pointer;
+  background-color: rgb(227, 236, 97);
+}
+
+.show-hide:hover{
+  cursor: pointer;
+  background-color: rgb(75, 212, 236);
+}
+
+#f{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  display: grid;
+  place-items: center;
+}
+
+#results {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(23, 23, 71);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.computer-move, .you-move{
+  display: gird;
+  place-items: center;
+}
+
+#results .winner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(85, 174, 201);
+  font-size: 35px;
+  font-weight: 700;
+}
+
+#results .winner button{
+  margin-top: 30px;
+  width: 140px;
+  height: 40px;
+  background-color: rgb(117, 117, 167);
+  color: rgb(248, 248, 248);
+  border: none;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+#results .rock, #results .paper, #results .scissor{
+  position: static;
+}
+#results .winner button:hover{
+  cursor: pointer;
+  background-color: rgb(130, 172, 172);
+}
+
+.you-move p, .computer-move p{
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width:600px) {
+  #container{
+    flex-direction: column;
+    height: 350px ;
+    width: 300px;
+  }
+  .scores{
+    width: 90%;
+    margin: 0;
+  }
+  .paper, .rock, .scissor{
+    width: 90px;
+    height: 90px;
+    border-width: 10px;
+  }
+  .paper{
+    left: -40px;
+  }
+  #results{
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: -80px;
+    font-size: 15px;
+  }
+  p{
+    font-size: 15px !important;
+  }
+  .you-move{
+    margin-top: 20px;
+  }
+}

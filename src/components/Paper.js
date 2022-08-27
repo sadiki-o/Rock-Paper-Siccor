@@ -16,7 +16,7 @@ const Hand = (props) => {
                 }else{
                     el.style.transform = "rotate(360deg)";
                 }
-                el.style.transformOrigin = "50% 50% 0";
+                el.style.transformOrigin = "50% 50%";
                 el.style.transition = "all 1s ease";
                 setTimeout(() => {dispatch(playMove("paper"))}, 1000)
             }

@@ -36,7 +36,10 @@ function App() {
       <Score />
       <div id="f">
         <div 
-        style={{visibility: states.hideShowMove }}
+        style={{
+          visibility: states.hideShowMove,
+          transformOrigin: '50% 50%'
+        }}
         id="choose-move">
           <Paper dis={false}/>
           <Rock dis={false}/>
